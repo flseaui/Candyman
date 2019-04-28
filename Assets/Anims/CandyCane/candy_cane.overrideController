@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: candy_cane
+  m_Controller: {fileID: 9100000, guid: 2f747493e427a4e4e8c0b358c9caa230, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: a113191bfd4f88b4f84b8cb38c09e6cc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a113191bfd4f88b4f84b8cb38c09e6cc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5cc3271168d19d148abe5b739e3d3517, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5cc3271168d19d148abe5b739e3d3517, type: 2}
