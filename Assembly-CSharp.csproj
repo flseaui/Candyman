@@ -59,8 +59,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BodyDisplay.cs" />
-    <Compile Include="Assets\Scripts\BodypartMap.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
@@ -68,15 +66,18 @@
     <Compile Include="Assets\Scripts\IWeapon.cs" />
     <Compile Include="Assets\Scripts\LRSelector.cs" />
     <Compile Include="Assets\Scripts\MeleeWeapon.cs" />
+    <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\New\Body.cs" />
     <Compile Include="Assets\Scripts\New\BodypartButton.cs" />
     <Compile Include="Assets\Scripts\New\Inventory.cs" />
     <Compile Include="Assets\Scripts\New\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\New\Item.cs" />
+    <Compile Include="Assets\Scripts\New\MapGenerator.cs" />
     <Compile Include="Assets\Scripts\New\NewBodypartMap.cs" />
     <Compile Include="Assets\Scripts\NumericExtensions.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Selector.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\RangedWeapon.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

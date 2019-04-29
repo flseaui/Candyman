@@ -27,7 +27,6 @@ public class MeleeWeapon : MonoBehaviour, IWeapon
     public void Use()
     {
         _animator.SetTrigger(Hand ? LeftHand : RightHand);
-        Debug.Log("yayyy");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

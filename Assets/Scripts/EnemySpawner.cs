@@ -6,10 +6,11 @@ using Random = System.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
-    
-    [SerializeField] private int _maxEnemies;
+    [SerializeField] private GameObject[] _enemyPrefabs;
+
+    private int _maxEnemies = 10;
     [SerializeField] private float _enemyRadius;
+    
     private Transform _player;
     
     private void Start()
@@ -21,12 +22,14 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        _maxEnemies = 10 + GameData.Score / 50;
         if (transform.childCount >= _maxEnemies) return;
         
         double angle = UnityEngine.Random.Range(0, 360);
         var x = (float) (_enemyRadius * Math.Cos(angle.ToRadians()) + _player.position.x);
         var y = (float) (_enemyRadius * Math.Sin(angle.ToRadians()) + _player.position.y);
-        var enemy = Instantiate(_enemyPrefab, new Vector3(x, y), Quaternion.identity, transform);
+
+        var enemy = Instantiate(_enemyPrefabs[UnityEngine.Random.Range(0, _enemyPrefabs.Length)], new Vector3(x, y), Quaternion.identity, transform);
     }
     
 }

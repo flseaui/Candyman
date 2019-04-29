@@ -15,8 +15,13 @@ public class Enemy : MonoBehaviour
     private Vector2 _moveVec;
     private int _health;
 
-    public void Damage(int damage) => _health -= damage;
-    
+    public void Damage(int damage)
+    {
+        _animator.SetTrigger("hit");
+        _health -= damage;
+        //_animator.ResetTrigger("hit");
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -27,6 +32,32 @@ public class Enemy : MonoBehaviour
     {
         _player = GameObject.Find("Player");
         _health = 10;
+        var maxSpeed = 0;
+        var minSpeed = 85;
+        var minRange = 3;
+        var maxRange = 20;
+        if (GameData.Score > 200)
+            maxSpeed = 200;
+        if (GameData.Score > 400)
+            maxSpeed = 225;
+        if (GameData.Score > 500)
+        {
+            maxSpeed = 250;
+            minSpeed = 110;
+        }
+        if (GameData.Score > 700)
+        {
+            maxSpeed = 275;
+            minSpeed = 150;
+        }
+        if (GameData.Score > 1000)
+        {
+            maxSpeed = 300;
+            minSpeed = 175;
+        }
+
+        _speed = Random.Range(minSpeed, maxSpeed);
+        _range = Random.Range(minRange, maxRange);
     }
 
     private void OnDestroy()
@@ -73,6 +104,9 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.AddForce(_moveVec.normalized * _speed, ForceMode2D.Force);
+        var dir = _player.transform.position - transform.position;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private void OnDrawGizmosSelected()
